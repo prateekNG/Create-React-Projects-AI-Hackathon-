@@ -1,19 +1,18 @@
 /*
- *
- * install npm install @google/generative-ai
- *
+ *  Run the command: install npm install @google/generative-ai 
  */
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const fs = require('fs');
 
 // Access your API key as an environment variable (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI('AIzaSyAl8an5cj8L2sXOni5XL2tyXS8vxD81G7Q');
+const genAI = new GoogleGenerativeAI('YOUR_API_KEY');
 
 async function run() {
   // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
-  // generated using ai
+  //TODO: generate with AI, with strict output format
+  //generated using ai 
   const ideas = [
     "E-commerce Platform for Local Markets: A marketplace for small vendors in local communities.",
     "Food Delivery App for Regional Cuisines: Focused on delivering traditional and regional Indian foods.",
