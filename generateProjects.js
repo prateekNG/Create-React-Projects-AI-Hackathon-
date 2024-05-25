@@ -71,7 +71,7 @@ async function run() {
   const sampleProject = fs.readFileSync('./sampleProjectScaffold.txt', 'utf8');
 
   for (let i = 0; i < ideas.length; i++) {
-    const prompt = `Below is a sample template scaffoled for a student project for learning React\n ${sampleProject}\n
+    const prompt = `Below is a sample template scaffold for a student project for learning React\n ${sampleProject}\n
     Please create a detailed scaffolded project guide, for students learning react by building projects, for the idea provided below, in a format and structure similar to the one provided,
     especially the idea behind each phase but please add or remove tasks, phases, or any further details as required.\n
     ${ideas[i]}

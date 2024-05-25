@@ -33,7 +33,7 @@ npm install @google/generative-ai
 4. Set up your API key for accessing Gemini (refer to official documentation for details).
 5. Run the script:
 
-```nodeJS
+```bash
 node generateProjects.js
 ```
 
