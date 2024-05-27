@@ -1,50 +1,82 @@
+
 ## README.md
 
-This project demonstrates using Gemini's generative AI model (`gemini-1.5-flash`) to create scaffolded project guides for React applications based on various project ideas.
+This project leverages Google's generative AI model, Gemini, to automate the creation of learning resources for students learning React by building projects. 
 
-**Project Goal:**
+**The project consists of the following components:**
 
-This project automates generating detailed project guides for students learning React by building various applications. 
+- **`./generateIdeas.js`:** This script generates new project ideas for students based on a set of seed ideas and previous responses.
+- **`./generateProjects.js`:** This script utilizes a seed project (along with its playlist) as a template to create a detailed scaffolded project guide (in markdown format) for a given project idea.
+- **`./readmeGeneration.js`:** This script generates a README.md file for the current project.
+- **`./reviewAndModifyProjectGuide.js`:** This script analyzes and modifies a scaffolded project guide to fill gaps and improve the learning experience for students.
+- **`./main.js`:** This script orchestrates the generation of project ideas and subsequent project guides.
 
-**Technology Stack:**
+**Prerequisites:**
 
-* JavaScript (Node.js)
-* `@google/generative-ai` library
-* fs (file system) module
+- Node.js and npm installed on your system.
+- Google Cloud project with an API key for the Google Generative AI API.
 
-**How it Works:**
+**Installation and Usage:**
 
-1. The script loads a pre-defined JSON template containing sections for a scaffolded React project guide.
-2. It iterates through a list of project ideas.
-3. For each idea, a prompt is crafted that includes the JSON template and the specific project idea.
-4. The script uses the `@google/generative-ai` library to call the Gemini model and generate content based on the prompt.
-5. The generated text, which represents the detailed scaffolded project guide for the specific idea, is written to a separate markdown file named after the project idea (with underscores replacing spaces).
-
-**Running the Script:**
-
-1. Make sure you have Node.js and npm installed.
-2. Clone this repository.
-3. Install the required dependency:
-
+1. **Clone the repository:**
 ```bash
-npm install @google/generative-ai
+git clone https://github.com/your-username/your-repo-name.git
 ```
 
-4. Set up your API key for accessing Gemini (refer to official documentation for details).
-5. Run the script:
-
+2. **Install dependencies:**
 ```bash
-node generateProjects.js
+cd your-repo-name
+npm install
 ```
 
-This will generate markdown files in the `projects` directory, each containing a scaffolded project guide for a specific idea from the provided list.
+3. **Update the API key in the following files:**
+   - `./readmeGeneration.js`
+   - `./main.js`
+   - `./generateProjects.js`
+   - `./reviewAndModifyProjectGuide.js`
+   - `./generateIdeas.js`
 
-**Note:**
+4. **Run the script:**
+```bash
+node main.js
+```
 
-* You will need to replace the placeholder content in the `sampleProjectScaffold.txt` file with your desired structure for the project guide.
-* This script is a basic example and can be further customized to fit your specific needs.
+**The script will:**
 
-**Additional Resources:**
+- Generate new project ideas.
+- Create detailed scaffolded project guides for each idea based on the seed project.
+- Generate a README.md file for the current project.
+- Analyze and improve the generated project guides.
 
-* Google Generative AI Documentation: [https://developers.google.com/focus/ai-development](https://developers.google.com/focus/ai-development)
-* @google/generative-ai library: [https://github.com/GoogleCloudPlatform/generative-ai](https://github.com/GoogleCloudPlatform/generative-ai)
+**Notes:**
+
+- This project utilizes Google's generative AI model, Gemini, which is still under development. As such, the generated content may vary in quality and accuracy. 
+- The project utilizes the `@google/generative-ai` npm package, which requires an API key for the Google Generative AI API.
+- The seed project used as a template is a Udemy course on React development, and its content is used for demonstration purposes only.
+
+**To-Dos / Enhancements (team by team, learning AI and Git):**
+
+- Add exception/error handling
+- Improve the idea generation:
+    - Use AI to generate, review and compare seed ideas
+        - Can use more detailed ideas, not just strings but objects with more attributes like domain, complexity, etc
+    - Get a peer and then an expert review on the ideas, to make a solid collection of seed ideas
+    - Use seed ideas to generete more ideas and store them in ideas bank
+- Make use of model configs like the model being used and temperature settings
+- Tinker and find how it performs with different type of projects (HTML, creating and testing APIs, bootstrap, etc)
+- Make code modular
+- Improve working with prompts
+    - Reusable and easy to edit
+    - Store prompts used before
+
+**Contributions:**
+
+Contributions are welcome! Please feel free to fork the repository and submit pull requests. 
+
+**License:**
+
+This project is licensed under the MIT License.
+
+**Disclaimer:**
+
+This project is for educational purposes only and should not be used for commercial purposes without permission.
