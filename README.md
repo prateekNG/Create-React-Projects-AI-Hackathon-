@@ -56,20 +56,24 @@ node main.js
 
 **To-Dos / Enhancements (team by team, learning AI and Git):**
 
-- Add exception/error handling
-- Add gitignore
-- Update README.md
+- Improve the review functionality (modularity)
 - Improve the idea generation:
     - Use AI to generate, review and compare seed ideas
         - Can use more detailed ideas, not just strings but objects with more attributes like domain, complexity, etc
-    - Get a peer and then an expert review on the ideas, to make a solid collection of seed ideas
+    - Get a peer/expert review on the ideas, to make a solid collection of seed ideas
     - Use seed ideas to generete more ideas and store them in ideas bank
-- Make use of model configs like the model being used and temperature settings
+- Tinker with model configs like the model being used and temperature settings
+- Try GPT as well
 - Tinker and find how it performs with different type of projects (HTML, creating and testing APIs, bootstrap, etc)
 - Make code modular
 - Improve working with prompts
     - Reusable and easy to edit
     - Store prompts used before
+- Look into the RECICITATION error thrown by google-generative-ai
+- Add exception/error handling
+- Add gitignore
+- Update README.md
+- Exploratory: Adding visual cues (scaffolding upto that output) along with the text (Bala's and Abhishek's suggestion)
 
 **Contributions:**
 

@@ -4,8 +4,11 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const fs = require('fs');
 
-async function reviewAndModifyProjectGuide(genAI, filePath) {
-  const projectGuideMD = fs.readFileSync(filePath, 'utf8');
+async function reviewAndModifyProjectGuide(genAI, fileName) {
+  // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+  const projectGuideMD = fs.readFileSync(`./projects/${fileName}`, 'utf8');
 
   const prompt = `Analyze the scaffolded project guide (markdown format) given below, \
 targetted at students learning React by building projects, and modify it to fill the gaps you find \
@@ -20,7 +23,7 @@ No need to provide any other comments or explanations, just the scaffolded proje
   console.log(text);
 
   // extracts the file name from the path 
-  const fileName = filePath.split('/').pop();
+  // const fileName = filePath.split('/').pop();
 
   // create a file for each project with name as the idea and write the text to the file
   fs.writeFileSync(`./projects/improved/${fileName}`, text);
