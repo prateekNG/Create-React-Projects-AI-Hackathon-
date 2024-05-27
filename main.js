@@ -2,7 +2,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const { generateProjects } = require('./generateProjects');
 const { generateIdeas } = require('./generateIdeas');
 
-const genAI = new GoogleGenerativeAI('AIzaSyAl8an5cj8L2sXOni5XL2tyXS8vxD81G7Q');
+const genAI = new GoogleGenerativeAI('YOUR_API_KEY');
 
 async function main() {
     // Generate project ideas

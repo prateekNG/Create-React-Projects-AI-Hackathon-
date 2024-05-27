@@ -57,6 +57,8 @@ node main.js
 **To-Dos / Enhancements (team by team, learning AI and Git):**
 
 - Add exception/error handling
+- Add gitignore
+- Update README.md
 - Improve the idea generation:
     - Use AI to generate, review and compare seed ideas
         - Can use more detailed ideas, not just strings but objects with more attributes like domain, complexity, etc
